@@ -4,10 +4,8 @@ public class StateMachine : MonoBehaviour
 {
     private BaseState _currentState;
 
-    private void Awake() {
-        _currentState = GetInitialeState();
-        if (_currentState != null)
-            _currentState.Enter();
+    private void Start() {
+        ChangeState(GetInitialeState());
     }
 
     private void Update() {
@@ -26,8 +24,6 @@ public class StateMachine : MonoBehaviour
 
         _currentState = newState;
         _currentState.Enter();
-
-        
     }
 
     protected virtual BaseState GetInitialeState() {

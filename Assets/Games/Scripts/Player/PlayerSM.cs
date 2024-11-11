@@ -1,16 +1,24 @@
 using UnityEngine;
 
-public class PlayerSM : MonoBehaviour
+public class PlayerSM : StateMachine
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+    [HideInInspector]
+    public PlayerState_Idle _idleState;
+    [HideInInspector]
+    public PlayerState_Move _moveState;
+    [HideInInspector]
+    public PlaterState_Interact _interactState;
+
+    public Rigidbody rb;
+
+    private void Awake() {
+        Debug.Log("PlayerSM ON");
+        _idleState = new PlayerState_Idle(this);
+        _moveState = new PlayerState_Move(this);
+        _interactState = new PlaterState_Interact(this);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    protected override BaseState GetInitialeState() {
+        return _idleState;
     }
 }
