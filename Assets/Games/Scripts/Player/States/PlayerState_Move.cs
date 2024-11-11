@@ -38,6 +38,14 @@ public class PlayerState_Move : BaseState {
 
         Vector3 newDir = new Vector3(xDir, 0, zDir);
         sm.rb.position += newDir * 2 * Time.deltaTime;
+
+        PlayerRotation(newDir);
+    }
+
+    private void PlayerRotation(Vector3 direct) {
+        Quaternion toRotate = Quaternion.LookRotation(direct.normalized, Vector3.up);
+
+        sm.rb.rotation = Quaternion.RotateTowards(sm.rb.rotation, toRotate, 200 * Time.deltaTime);
     }
 
     private void OnAction() {

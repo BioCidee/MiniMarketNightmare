@@ -18,10 +18,10 @@ public class PlaterState_Interact : BaseState {
 
     public override void UpdatePhysics() {
         base.UpdatePhysics();
-        RaycastHit collide; 
-        Physics.Raycast(sm.rb.position, sm.rb.position, out collide, 5f);
-        Debug.Log(collide);
-
+        RaycastHit hitInfo;
+        if (Physics.Raycast(new Vector3(sm.rb.position.x, 0.2f, sm.rb.position.z), sm.rb.transform.forward, out hitInfo)) {
+        }
+        Debug.DrawRay(new Vector3(sm.rb.position.x, 0.2f, sm.rb.position.z), sm.rb.transform.forward, Color.red);
         sm.ChangeState(sm._idleState);
     }
 
