@@ -10,7 +10,6 @@ public class PlayerSM : StateMachine
     public PlaterState_Interact _interactState;
 
     [SerializeField] private GameObject handRight;
-    [SerializeField] private GameObject handLeft;
 
     public Rigidbody rb;
 
@@ -23,5 +22,25 @@ public class PlayerSM : StateMachine
 
     protected override BaseState GetInitialeState() {
         return _idleState;
+    }
+
+    public void SetObjectInHands( ) {
+        handRight = null;
+    }
+
+    public void DeletObjectInHands() {
+
+    }
+
+    public void GiveTypeOfObjectInHands() {
+        
+    }
+
+    public bool AsHandFree() {
+        if(handRight == null) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
