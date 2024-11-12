@@ -9,6 +9,9 @@ public class PlayerSM : StateMachine
     [HideInInspector]
     public PlaterState_Interact _interactState;
 
+    [SerializeField] private GameObject handRight;
+    [SerializeField] private GameObject handLeft;
+
     public Rigidbody rb;
 
     private void Awake() {

@@ -9,7 +9,6 @@ public class PlayerState_Move : BaseState {
 
     public override void Enter() {
         base.Enter();
-        Debug.Log("MOVE STATE");
     }
 
     public override void UpdateLogic() {

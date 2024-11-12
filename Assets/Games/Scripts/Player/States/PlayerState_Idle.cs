@@ -11,7 +11,6 @@ public class PlayerState_Idle : BaseState {
     }
 
     public override void Enter() {
-        Debug.Log("IDLE STATE");
         base.Enter();
     }
 
@@ -20,7 +19,7 @@ public class PlayerState_Idle : BaseState {
         float xDir = Input.GetAxis("Horizontal");
         float zDir = Input.GetAxis("Vertical");
 
-        if (Mathf.Abs(zDir) > Mathf.Epsilon && Mathf.Abs(xDir) > Mathf.Epsilon) {
+        if (Mathf.Abs(zDir) > Mathf.Epsilon || Mathf.Abs(xDir) > Mathf.Epsilon) {
             sm.ChangeState(sm._moveState);
         }
 
