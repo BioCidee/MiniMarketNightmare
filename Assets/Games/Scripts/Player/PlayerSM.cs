@@ -9,6 +9,7 @@ public class PlayerSM : StateMachine
     [HideInInspector]
     public PlaterState_Interact _interactState;
 
+    [SerializeField] private Transform transformHandRight;
     [SerializeField] private GameObject handRight;
 
     public Rigidbody rb;

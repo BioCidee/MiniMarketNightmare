@@ -40,6 +40,6 @@ public class PlaterState_Interact : BaseState {
                 }
             }
         }
-        Debug.DrawRay(new Vector3(sm.rb.position.x, 0.2f, sm.rb.position.z), sm.rb.transform.forward, Color.red);
+        Debug.DrawRay(new Vector3(sm.rb.position.x, 0.2f, sm.rb.position.z), sm.rb.transform.forward, Color.red, 3f);
     }
 }

@@ -4187,8 +4187,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80e1cd06d2e4f3b42806394a00fb3daa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handRight: {fileID: 1742634458}
-  handLeft: {fileID: 1742634458}
+  transformHandRight: {fileID: 1742634459}
+  handRight: {fileID: 0}
   rb: {fileID: 1417127068}
 --- !u!1001 &1448250205
 PrefabInstance:
