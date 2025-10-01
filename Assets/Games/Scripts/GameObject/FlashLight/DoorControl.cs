@@ -25,5 +25,6 @@ public class DoorControl : MonoBehaviour
     private void OpenDoor()
     {
         Debug.Log("DOOR IS OPENING");
+        Destroy(this.gameObject);
     }
 }
